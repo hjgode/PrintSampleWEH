@@ -1,0 +1,52 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PrintSample.PrintLabel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="Green"
+    shell:SystemTray.ForegroundColor="White"
+    shell:SystemTray.Opacity="1">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Print Sample" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Print Label" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="10,151,14,10" Grid.RowSpan="2">
+            <TextBox x:Name="txtItemName" HorizontalAlignment="Left" Height="82" Margin="98,66,-11,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369" TextChanged="txtItemName_TextChanged"/>
+            <Button x:Name="btnPrintLabel" Content="Print Label" HorizontalAlignment="Left" Height="85" Margin="46,502,0,0" VerticalAlignment="Top" Width="200" Click="btnPrintLabel_Click"/>
+            <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Height="85" Margin="251,502,0,0" VerticalAlignment="Top" Width="200" Click="BackButton_Click"/>
+            <TextBlock HorizontalAlignment="Left" Height="58" Margin="10,91,0,0" TextWrapping="Wrap" Text="Item Name" VerticalAlignment="Top" Width="98"/>
+            <TextBlock HorizontalAlignment="Left" Height="54" Margin="8,156,0,0" TextWrapping="Wrap" Text="Item No" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="txtItemNo" HorizontalAlignment="Left" Height="78" Margin="98,144,-11,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369" TextChanged="txtItemNo_TextChanged"/>
+            <RadioButton x:Name="rbItemLabel" GroupName="Label" Content="Item Label" HorizontalAlignment="Left" Height="76" Margin="0,10,0,0" VerticalAlignment="Top" Width="283" Checked="rbItemLabel_Checked"/>
+            <RadioButton x:Name="rbURLLabel" GroupName="Label" Content="URL QR Label" HorizontalAlignment="Left" Height="84" Margin="0,210,0,0" VerticalAlignment="Top" Width="207" Checked="rbURLLabel_Checked"/>
+            <TextBox x:Name="txtURL" HorizontalAlignment="Left" Height="79" Margin="98,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" TextChanged="txtURL_TextChanged"/>
+            <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,380,0,0" TextWrapping="Wrap" Text="TextLine1" VerticalAlignment="Top" Width="98"/>
+            <TextBlock HorizontalAlignment="Left" Height="56" Margin="0,299,0,0" TextWrapping="Wrap" Text="URL" VerticalAlignment="Top" Width="98"/>
+            <TextBlock HorizontalAlignment="Left" Height="37" Margin="-1,452,0,0" TextWrapping="Wrap" Text="TextLine2" VerticalAlignment="Top" Width="109"/>
+            <TextBox x:Name="txtTextLine1" HorizontalAlignment="Left" Height="72" Margin="98,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" TextChanged="txtTextLine1_TextChanged"/>
+            <TextBox x:Name="txtTextLine2" HorizontalAlignment="Left" Height="75" Margin="98,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" TextChanged="txtTextLine2_TextChanged"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
